@@ -12,17 +12,20 @@ Key Concepts
 
 1. Transaction
   A transaction represents a data transfer between modules (e.g., read/write).
-  Carried by tlm_generic_payload in TLM-2.0.
-  Can include data, address, command type, and response status.
 
-2. Modules
+  Carried by tlm_generic_payload in TLM-2.0.
+  
+  Can include data, address, command type, and response status.
+  
+
+3. Modules
    Initiator: Generates transactions (e.g., processor sending a request).
    Target: Responds to transactions (e.g., memory or peripheral).
    Sockets: Connect initiator and target:
     tlm_utils::simple_initiator_socket
     tlm_utils::simple_target_socket
 
-3. Transport Methods
+4. Transport Methods
   1.Blocking Transport (b_transport):
     Simple method where initiator waits until the target completes the transaction.
     Can include delays for timing accuracy.
@@ -33,8 +36,11 @@ Key Concepts
 
 Features:
   1.High-level modeling abstraction (ignore pin-level signals).
+  
   2.Supports temporal decoupling with simulation delays.
+  
   3.Allows easy verification of module interactions and functional correctness.
+  
   4.Compatible with both C++ software simulation and hardware prototyping.
 
 Example Structure
