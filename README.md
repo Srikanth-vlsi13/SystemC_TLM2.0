@@ -8,22 +8,21 @@ SystemC TLM 2.0 (Transaction-Level Modeling) is a modeling methodology for high-
 
 TLM-2.0 is widely used in SoC design, verification, and early software development, enabling fast functional simulation and architectural exploration.
 
+
 Key Concepts
 
 1. Transaction
-  A transaction represents a data transfer between modules (e.g., read/write).
-
-  Carried by tlm_generic_payload in TLM-2.0.
-  
-  Can include data, address, command type, and response status.
+   A transaction represents a data transfer between modules (e.g., read/write).
+   Carried by tlm_generic_payload in TLM-2.0.
+   Can include data, address, command type, and response status.
   
 
-3. Modules
+2. Modules
    Initiator: Generates transactions (e.g., processor sending a request).
    Target: Responds to transactions (e.g., memory or peripheral).
    Sockets: Connect initiator and target:
-    tlm_utils::simple_initiator_socket
-    tlm_utils::simple_target_socket
+       tlm_utils::simple_initiator_socket
+       tlm_utils::simple_target_socket
 
 4. Transport Methods
   1.Blocking Transport (b_transport):
@@ -43,14 +42,7 @@ Features:
   
   4.Compatible with both C++ software simulation and hardware prototyping.
 
-Example Structure
-project/
-│
-├── adder_payload.h       # Defines transaction payload
-├── initiator.h           # Initiator module
-├── target.h              # Target module
-├── main.cpp              # sc_main, bind modules, start simulation
-└── README.md             # Project documentation
+
 
 How to Run:
   1.Install SystemC library.
